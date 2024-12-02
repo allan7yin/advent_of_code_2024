@@ -1,8 +1,7 @@
+use crate::days::ChristmasSaver;
 use std::collections::HashMap;
 use std::fs::File;
-use std::hash::Hash;
 use std::io::{self, BufRead};
-use crate::days::ChristmasSaver;
 
 fn read_rows() -> (Vec<i32>, Vec<i32>) {
     let path = "src/data_files/day1.txt";
@@ -37,14 +36,14 @@ impl ChristmasSaver {
         for (val1, val2) in rows.0.iter().zip(rows.1.iter()) {
             distance += (val1 - val2).abs();
         }
-        
+
         distance
     }
 
     pub fn get_similarity_score(&self) -> i32 {
         let mut score = 0;
         let rows = read_rows();
-        
+
         let mut right_count: HashMap<i32, i32> = HashMap::new();
         for &num in rows.1.iter() {
             *right_count.entry(num).or_insert(0) += 1;
