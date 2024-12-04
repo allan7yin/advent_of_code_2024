@@ -9,6 +9,7 @@ import (
 func main() {
 	cs := &d.ChristmasSaver{}
 
+	// Day 1
 	distance, err := cs.GetListDistance()
 	if err != nil {
 		fmt.Println("Error calculating list distance:", err)
@@ -22,4 +23,19 @@ func main() {
 		return
 	}
 	fmt.Println("Similarity Score:", score)
+
+	// Day 2
+	safeCount, err := cs.CountSafeReports()
+	if err != nil {
+		fmt.Println("Error counting number of safe reports:", err)
+		return
+	}
+	fmt.Println("Number of safe reports:", safeCount)
+
+	safeCountTol, err := cs.CountSafeReportsTolerance()
+	if err != nil {
+		fmt.Println("Error counting number of safe reports:", err)
+		return
+	}
+	fmt.Println("Number of safe reports:", safeCountTol)
 }

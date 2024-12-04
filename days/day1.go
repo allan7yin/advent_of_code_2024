@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-func readRows() ([]int, []int, error) {
+func readRowsDay1() ([]int, []int, error) {
 	file, err := os.Open("./dataFiles/day1.txt")
 	if err != nil {
 		fmt.Println("Error opening file:", err)
@@ -47,7 +47,7 @@ func readRows() ([]int, []int, error) {
 }
 
 func (c *ChristmasSaver) GetListDistance() (int, error) {
-	col1, col2, err := readRows()
+	col1, col2, err := readRowsDay1()
 	if err != nil {
 		return 0, err
 	}
@@ -65,7 +65,7 @@ func (c *ChristmasSaver) GetListDistance() (int, error) {
 }
 
 func (c *ChristmasSaver) GetSimilarityScore() (int, error) {
-	col1, col2, err := readRows()
+	col1, col2, err := readRowsDay1()
 	if err != nil {
 		return 0, err
 	}
