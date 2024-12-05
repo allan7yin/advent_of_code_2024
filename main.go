@@ -38,4 +38,7 @@ func main() {
 		return
 	}
 	fmt.Println("Number of safe reports:", safeCountTol)
+
+	numWords, err := cs.FindAllInstances("XMAS")
+	fmt.Println("Number of occurrencs of target word:", numWords)
 }
