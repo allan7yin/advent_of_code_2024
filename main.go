@@ -10,6 +10,8 @@ func main() {
 	cs := &d.ChristmasSaver{}
 
 	// Day 1
+	fmt.Println("+++++=======+++++")
+	fmt.Println("Day 1")
 	distance, err := cs.GetListDistance()
 	if err != nil {
 		fmt.Println("Error calculating list distance:", err)
@@ -25,6 +27,8 @@ func main() {
 	fmt.Println("Similarity Score:", score)
 
 	// Day 2
+	fmt.Println("+++++=======+++++")
+	fmt.Println("Day 2")
 	safeCount, err := cs.CountSafeReports()
 	if err != nil {
 		fmt.Println("Error counting number of safe reports:", err)
@@ -39,6 +43,29 @@ func main() {
 	}
 	fmt.Println("Number of safe reports:", safeCountTol)
 
+	// Day 3
+	fmt.Println("+++++=======+++++")
+	fmt.Println("Day 3")
+	uncorruptedCount, err := cs.FindUncorruptedMults()
+	fmt.Println("Number of uncorrupted multiplications:", uncorruptedCount)
+	if err != nil {
+		fmt.Println("Error computing sum of multiplications:", err)
+		return
+	}
+
+	uncorruptedCountDisable, err := cs.FindUncorruptedMultsDisable()
+	fmt.Println("Number of uncorrupted multiplications with disabled portions:", uncorruptedCountDisable)
+	if err != nil {
+		fmt.Println("Error computing sum of multiplications:", err)
+		return
+	}
+
+	// Day 4
+	fmt.Println("+++++=======+++++")
+	fmt.Println("Day 4")
 	numWords, err := cs.FindAllInstances("XMAS")
-	fmt.Println("Number of occurrencs of target word:", numWords)
+	fmt.Println("Number of occurrences of target word:", numWords)
+
+	numCrossWords, err := cs.FindAllCrossInstances()
+	fmt.Println("Number of occurrences of target cross word:", numCrossWords)
 }
